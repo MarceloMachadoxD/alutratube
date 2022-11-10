@@ -1,7 +1,12 @@
-export default function MyApp({ Component, pageProps }) {
-    return 
+import { CSSReset } from "../source/components/cssReset";
+
+function MyApp({ Component, pageProps }) {
+    return(
     <>
-    <CSSReset />
-    <Component {...pageProps} />
+        <CSSReset />
+        <Component {...pageProps} />
     </>
+    )
 }
+
+export default MyApp;

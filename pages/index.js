@@ -1,7 +1,6 @@
 import React from "react";
 import config from "../config.json";
 import styled from "styled-components";
-import { CSSReset } from "../source/components/cssReset";
 import Menu from "../source/components/Menu";
 import { StyledTimeLine } from "../source/components/timeline";
 
