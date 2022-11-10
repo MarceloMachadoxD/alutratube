@@ -13,7 +13,6 @@ function HomePage() {
 
     return (
         <>
-            <CSSReset />
             <div style={estilosDaHomePage}>
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
                 <Header />
