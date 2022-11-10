@@ -23,7 +23,6 @@ const theme = {
 
 function MyApp({ Component, pageProps }) {
     const contexto = react.useContext(ColorModeContext)
-    console.log(contexto.mode)
     return (
         <>
             <ColorModeProvider>

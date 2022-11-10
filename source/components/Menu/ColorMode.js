@@ -2,7 +2,7 @@ import react from "react";
 
 
 export const ColorModeContext = react.createContext({
-    mode: "ligth"
+    mode: "dark"
 });
 
 export default function ColorModeProvider(props) {
