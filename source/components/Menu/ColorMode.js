@@ -2,12 +2,12 @@ import react from "react";
 
 
 export const ColorModeContext = react.createContext({
-    mode: "dark"
+    mode: ""
 });
 
 export default function ColorModeProvider(props) {
     return (
-        <ColorModeContext.Provider value={{ mode: "light" }}>
+        <ColorModeContext.Provider value={{ mode: props.initialMode }}>
             {props.children}
         </ColorModeContext.Provider>
     );
