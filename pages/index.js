@@ -25,6 +25,7 @@ export default HomePage
 
 
 const StyledHeader = styled.div`
+    background-color: ${({ theme }) => theme.backgroundLevel1};
     img {
         width: 80px;
         height: 80px;
@@ -41,7 +42,6 @@ const StyledHeader = styled.div`
   `;
 
 const StyledBanner = styled.div`
-    background-color: brown;
     background-image: url(${({ bg }) => bg});
     height: 230px;
   `;
