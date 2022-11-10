@@ -1,4 +1,4 @@
-import React from "react";
+import react from "react";
 import config from "../config.json";
 import styled from "styled-components";
 import Menu from "../source/components/Menu";
@@ -8,7 +8,7 @@ function HomePage() {
     const estilosDaHomePage = {
         //backgroundColor: "red"
     };
-    const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+    const [valorDoFiltro, setValorDoFiltro] = react.useState("");
 
     return (
         <>

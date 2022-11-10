@@ -1,5 +1,8 @@
+import react from "react";
+
 import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../source/components/cssReset";
+import ColorModeProvider, { ColorModeContext } from "../source/components/Menu/ColorMode";
 
 const theme = {
     light: {
@@ -19,12 +22,16 @@ const theme = {
 };
 
 function MyApp({ Component, pageProps }) {
+    const contexto = react.useContext(ColorModeContext)
+    console.log(contexto.mode)
     return (
         <>
-            <ThemeProvider theme={theme.dark} >
-                <CSSReset />
-                <Component {...pageProps} />
-            </ThemeProvider>
+            <ColorModeProvider>
+                <ThemeProvider theme={theme[contexto.mode]} >
+                    <CSSReset />
+                    <Component {...pageProps} />
+                </ThemeProvider>
+            </ColorModeProvider>
         </>
     )
 }
