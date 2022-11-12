@@ -7,8 +7,8 @@ import RegisterVideo from "../source/components/RegisterVideo";
 
 const theme = {
     draculabased: {
-        backgroundBase: "#55586b",
-        backgroundLevel1: "#44475a",
+        backgroundBase: "#282a36",
+        backgroundLevel1: "#55576b",
         backgroundLevel2: "#44475a",
         borderBase: "#6272a4",
         textColorBase: "white",
