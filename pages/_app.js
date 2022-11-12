@@ -11,7 +11,7 @@ const theme = {
         backgroundLevel1: "#44475a",
         backgroundLevel2: "#44475a",
         borderBase: "#6272a4",
-        textColorBase: "#bd93f9",
+        textColorBase: "white",
     },
     dark: {
         backgroundBase: "#181818",
