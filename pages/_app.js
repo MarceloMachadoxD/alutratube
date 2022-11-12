@@ -6,12 +6,12 @@ import ColorModeProvider, { ColorModeContext } from "../source/components/Menu/C
 import RegisterVideo from "../source/components/RegisterVideo";
 
 const theme = {
-    light: {
-        backgroundBase: "#f9f9f9",
-        backgroundLevel1: "#ffffff",
-        backgroundLevel2: "#f0f0f0",
-        borderBase: "#e5e5e5",
-        textColorBase: "#222222",
+    draculabased: {
+        backgroundBase: "#55586b",
+        backgroundLevel1: "#44475a",
+        backgroundLevel2: "#44475a",
+        borderBase: "#6272a4",
+        textColorBase: "#bd93f9",
     },
     dark: {
         backgroundBase: "#181818",
@@ -24,7 +24,7 @@ const theme = {
 
 function ProviderWrapper(props) {
     return (
-        <ColorModeProvider initialMode={"light"}>
+        <ColorModeProvider initialMode={"dark"}>
             {props.children}
         </ColorModeProvider>
     )
