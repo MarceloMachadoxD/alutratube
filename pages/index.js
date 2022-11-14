@@ -12,9 +12,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 
 function HomePage() {
-    const estilosDaHomePage = {
-        //backgroundColor: "red"
-    };
+
     const [valorDoFiltro, setValorDoFiltro] = react.useState("");
     const [playlists, setPlaylists] = react.useState({})
 
@@ -37,7 +35,7 @@ function HomePage() {
 
     return (
         <>
-            <div style={estilosDaHomePage}>
+            <div>
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
                 <Header />
                 <TimeLine valorDoFiltro={valorDoFiltro} playlists={playlists} />
