@@ -3,19 +3,44 @@ import config from "../config.json";
 import styled from "styled-components";
 import Menu from "../source/components/Menu";
 import { StyledTimeLine } from "../source/components/timeline";
+import { createClient } from "@supabase/supabase-js"
+
+const supabaseUrl = "https://jcoqksrjdubjahidhaqt.supabase.co"
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impjb3Frc3JqZHViamFoaWRoYXF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgyNjA4NjQsImV4cCI6MTk4MzgzNjg2NH0.otrv9rKhx76Vy_7QptkewgH8kU72zBKbULC_awsiF4w"
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
+
 
 function HomePage() {
     const estilosDaHomePage = {
         //backgroundColor: "red"
     };
     const [valorDoFiltro, setValorDoFiltro] = react.useState("");
+    const [playlists, setPlaylists] = react.useState({})
+
+    react.useEffect(() => {
+        supabase.from("video")
+            .select("*")
+            .then((dados) => {
+                console.log(dados.data);
+                const novasPlayLists = { ...playlists };
+                dados.data.forEach((video) => {
+                    if (!novasPlayLists[video.playlist]) {
+                        novasPlayLists[video.playlist] = []
+                    }
+                    novasPlayLists[video.playlist]?.push(video)
+                })
+                setPlaylists(novasPlayLists);
+
+            });
+    }, [])
 
     return (
         <>
             <div style={estilosDaHomePage}>
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
                 <Header />
-                <TimeLine valorDoFiltro={valorDoFiltro} playlists={config.playlists} />
+                <TimeLine valorDoFiltro={valorDoFiltro} playlists={playlists} />
             </div>
         </>
     );
